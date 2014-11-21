@@ -1,0 +1,18 @@
+<div class="sixteen columns">
+  {{marginal-propensity-graph
+    consume=marginalPropensityToConsume
+    save=marginalPropensityToSave
+    max=sliderMaximum
+  }}
+  <div class="marginal-propensity-adjustments container">
+    <div class="four columns marginal-propensity-label consume">
+      Marginal Propensity to Consume: {{marginal-propensity-format marginalPropensityToConsume}}
+    </div>
+    <div class="eight columns marginal-propensity-slider">
+      {{range-slider min=sliderMinimum max=sliderMaximum value=marginalPropensityToConsume}}
+    </div>
+    <div class="four columns marginal-propensity-label save">
+      Marginal Propensity to Save: {{marginal-propensity-format marginalPropensityToSave}}
+    </div>
+  </div>
+</div>
