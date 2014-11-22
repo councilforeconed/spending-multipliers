@@ -6,13 +6,22 @@
   }}
   <div class="marginal-propensity-adjustments container">
     <div class="four columns marginal-propensity-label consume">
-      Marginal Propensity to Consume: {{marginal-propensity-format marginalPropensityToConsume}}
+      Marginal Propensity to Consume: <strong>{{marginal-propensity-format marginalPropensityToConsume}}</strong>
     </div>
     <div class="eight columns marginal-propensity-slider">
       {{range-slider min=sliderMinimum max=sliderMaximum value=marginalPropensityToConsume}}
     </div>
     <div class="four columns marginal-propensity-label save">
-      Marginal Propensity to Save: {{marginal-propensity-format marginalPropensityToSave}}
+      Marginal Propensity to Save: <strong>{{marginal-propensity-format marginalPropensityToSave}}</strong>
     </div>
   </div>
 </div>
+
+<div class="sixteen columns">
+  <button {{action 'addRound'}}>Add Round</button>
+  {{#each amount in dollarAmounts}}
+    {{round-component amount=amount}}
+  {{/each}}
+</div>
+
+{{stacked-bar-chart amounts=dollarAmounts}}
