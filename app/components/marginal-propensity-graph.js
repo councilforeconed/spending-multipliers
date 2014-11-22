@@ -4,11 +4,11 @@ export default Ember.Component.extend({
   margin: 0,
 
   graphWidth: function () {
-    return this.get('width') - (this.get('margin') * 2);
+    return 940 - (this.get('margin') * 2);
   }.property('width', 'margin'),
 
   consumeBarWidth: function () {
-    return this.get('graphWidth') * this.get('consume') / this.get('max')
+    return 940 * this.get('consume') / this.get('max')
   }.property('graphWidth', 'max', 'consume'),
 
 });

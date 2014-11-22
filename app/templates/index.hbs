@@ -1,8 +1,12 @@
-<div class="sixteen columns">
+<div class="sixteen columns large-bill">
+</div>
+
+<div class="sixteen columns sliders">
   {{marginal-propensity-graph
     consume=marginalPropensityToConsume
     save=marginalPropensityToSave
     max=sliderMaximum
+    width=applicationWidth
   }}
   <div class="marginal-propensity-adjustments container">
     <div class="four columns marginal-propensity-label consume">
@@ -17,11 +21,13 @@
   </div>
 </div>
 
-<div class="sixteen columns">
-  <button {{action 'addRound'}}>Add Round</button>
+<div class="sixteen columns rounds">
   {{#each amount in dollarAmounts}}
     {{round-component amount=amount}}
   {{/each}}
 </div>
 
-{{stacked-bar-chart amounts=dollarAmounts}}
+<div class="sixteen columns stacked-bar-chart">
+  {{stacked-bar-chart amounts=dollarAmounts width=applicationWidth}}
+  <button {{action 'addRound'}} class="small add-round">Add Round</button>
+</div>

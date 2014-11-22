@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width=900 height="44px" viewBox="0 0 940 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    {{#each amount in amounts}}
-    <rect fill="#E37536" y="0" x="10" width="60" height="60"></rect>
-    {{/each}}
+<svg {{bind-attr width=width height=height viewBox=viewBox}} version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  {{#each amount in amountsForGraph}}
+  {{log amount.fill}}
+  {{chart-bar amount=amount.value sum=sumOfAmounts totalWidth=width offset=amount.offset fill=amount.fill}}
+  {{/each}}
 </svg>
 
-<p><strong>Total:</strong> {{format-currency sumOfAmounts}}</p>
+<p><strong>Value Created:</strong> {{format-currency sumOfAmounts}}</p>
