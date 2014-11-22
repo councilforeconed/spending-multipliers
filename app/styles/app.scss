@@ -22,3 +22,16 @@
 .large-bill, .rounds, .sliders, .stacked-bar-chart {
   margin-top: 2rem;
 }
+
+.large-bill-image {
+  margin: auto;
+  max-width: 100%;
+  width: 600px;
+  display: block;
+}
+
+.round-component {
+  width: 153px;
+  display: inline-block;
+
+}
