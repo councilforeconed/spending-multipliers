@@ -49,6 +49,9 @@ export default Ember.ArrayController.extend({
     addRound: function () {
       var rounds = this.get('content');
       rounds.addObject(Round.create({ number: rounds.length }));
+    },
+    resetActivity: function () {
+      this.set('model', [Round.create({ number: 0 })]);
     }
   }
 });

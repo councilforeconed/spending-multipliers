@@ -15,8 +15,9 @@
   box-sizing: border-box;
 }
 
-.add-round {
+.add-round, .reset-activity {
   float: right;
+  margin-left: 1rem;
 }
 
 .large-bill, .rounds, .sliders, .stacked-bar-chart {
